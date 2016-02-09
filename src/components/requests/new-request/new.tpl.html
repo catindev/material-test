@@ -1,0 +1,109 @@
+<md-dialog style="width:60%; min-width:600px;">
+
+	 <form name="loginForm">
+
+			<md-toolbar>
+				<div class="md-toolbar-tools">
+					<h2>Создать обращение</h2>
+				</div>
+			</md-toolbar>
+
+			<!-- Форма -->
+			<md-dialog-content class="md-padding" style="font-size:16px;">
+
+				<div layout="row" layout-sm="column" style="border-bottom:1px solid grey;">
+				  <div flex="20"	style="text-align:right">
+						<md-input-container class="md-block" style="margin:10px 0;margin-bottom: 20px;">
+								<label style="color:black;text-align:right">Каталог услуг</label>
+						</md-input-container>
+					</div>
+
+					<!-- Подформа категории -->
+				  <div flex>
+						<div layout="column">
+
+						  <div flex>
+								<md-input-container class="md-block" style="margin:10px 0;">
+										<label>Группа процессов</label>
+										<md-select name="myModel" ng-model="myModel">
+												<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+												<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+										</md-select>
+								</md-input-container>
+						  </div>
+
+						  <div flex>
+								<md-input-container class="md-block" style="margin:10px 0;">
+									<label>Процесс</label>
+									<md-select name="myModel" ng-model="myModel">
+											<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+											<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+									</md-select>
+								</md-input-container>
+						  </div>
+
+							<div flex>
+								<md-input-container class="md-block" style="margin:10px 0;">
+									<label>Подпроцесс</label>
+									<md-select name="myModel" ng-model="myModel">
+											<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+											<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+
+							<div flex>
+								<md-input-container class="md-block" style="margin:10px 0;">
+									<label>Задача</label>
+									<md-select name="myModel" ng-model="myModel">
+											<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+											<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+
+							<div flex>
+								<md-input-container class="md-block" style="margin:10px 0;">
+									<label>Элементы задачи</label>
+									<md-select name="myModel" ng-model="myModel">
+											<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+											<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+									</md-select>
+								</md-input-container>
+							</div>
+
+							<div flex>
+								<md-input-container class="md-block" style="margin:10px 0;">
+									<md-checkbox ng-model="data.cb1" aria-label="Checkbox 1">
+										Конфиденциально
+									</md-checkbox>
+								</md-input-container>
+							</div>
+
+						</div>
+				  </div>
+				</div>
+
+			</md-dialog-content>
+
+			<!-- Панель действий -->
+			<md-dialog-actions layout="row">
+				<md-button class="md-raised md-primary">
+						Отправить
+				</md-button>
+
+				<md-button class="md-raised md-primary">
+						Сохранить
+				</md-button>
+
+				<md-button
+					class="md-raised"
+					ng-click="newRequest.close()"
+					style="margin-right:20px;">
+						Отменить
+				</md-button>
+			</md-dialog-actions>
+
+	 </form>
+
+ </md-dialog>

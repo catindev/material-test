@@ -1,0 +1,48 @@
+{
+  "name": "ngpack",
+  "version": "1.1.0",
+  "description": "AngularJS + Webpack + CSS-modules + Baobab",
+  "main": "index.js",
+  "scripts": {
+    "test": "webpack",
+    "clean": "rm -rf build",
+    "devmode": "set NODE_ENV=development",
+    "dev": "npm run devmode && webpack-dev-server --content-base src/ --hot --history-api-fallback --inline --progress --port 8081",
+    "build": "npm run clean && set NODE_ENV=production && webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/catindev/ngpack.git"
+  },
+  "author": "catindev",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.3.21",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "css-loader": "^0.23.0",
+    "eslint": "^1.10.3",
+    "eslint-plugin-babel": "^3.0.0",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^1.7.0",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.2",
+    "postcss-loader": "^0.8.0",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-material": "^1.0.5",
+    "angular-route": "^1.4.8",
+    "angular-sanitize": "^1.4.8",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-preset-stage-0": "^6.3.13",
+    "baobab": "^2.2.1"
+  }
+}

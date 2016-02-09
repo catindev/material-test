@@ -1,0 +1,23 @@
+<div layout="row" flex style="height:100%;">
+
+    <!-- Фильтр -->
+    <md-sidenav
+      class="md-sidenav-left md-whiteframe-z2 md-padding"
+      layout="column"
+      md-component-id="left"
+      md-is-locked-open="$mdMedia('gt-sm')">
+        <h3>Фильтр</h3>
+
+    </md-sidenav>
+
+
+    <!-- Список обращений -->
+    <div layout="column" flex>
+        <md-content layout="column" flex class="md-padding">
+            <md-button ng-click="requests.newRequestForm()" class="md-raised">
+                Создать обращение
+            </md-button>
+        </md-content>
+    </div>
+
+</div>
