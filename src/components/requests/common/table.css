@@ -1,0 +1,29 @@
+
+.dt-depth-0 > div > .dt-cell {
+  font-weight: 500;
+}
+
+.dt-depth-1 > div > .dt-tree-col {
+  text-indent: 25px;
+}
+
+.dt-depth-2 > div > .dt-tree-col {
+  text-indent: 35px;
+}
+
+.dt-tree-col {
+  padding-left: 35px !important;
+}
+
+.dt-row-block {
+  padding: .5rem 0;
+}
+.dt-row-block:nth-child(even) {
+    background-color: #000000;
+}
+
+.dt-tree-toggle {
+  position: absolute;
+  left: 5px;
+  line-height: 40px;
+}

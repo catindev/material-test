@@ -2,11 +2,22 @@
 
     <!-- Фильтр -->
     <md-sidenav
-      class="md-sidenav-left md-whiteframe-z2 md-padding"
+      class="md-sidenav-left md-whiteframe-z2"
       layout="column"
       md-component-id="left"
       md-is-locked-open="$mdMedia('gt-sm')">
-        <h3>Фильтр</h3>
+
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h4><span style="font-size: 16px; line-height: 1;">
+                    Фильтр
+                </span></h4>
+            </div>
+        </md-toolbar>
+
+        <md-content layout="column" flex class="md-padding">
+            <search-filter></search-filter>
+        </md-content>
     </md-sidenav>
 
 
@@ -14,7 +25,7 @@
     <div layout="column" flex style="background:#ccc">
 
         <md-toolbar ng-class="requests.styles.toolbar">
-            <div class="md-toolbar-tools">
+            <div class="md-toolbar-tools md-padding">
                 <h1><span>Обращения</span></h1>
                 <span flex></span>
                 <md-button
@@ -25,12 +36,16 @@
             </div>
         </md-toolbar>
 
-        <md-content layout="column" flex class="md-padding">
-            <!-- Список обращений тут -->
-            <dtable
+        <md-content layout="column"
+            flex class="md-padding"
+            style="background: rgb(247, 247, 247);">
+
+            <!-- Список обращений -->
+            <requests-list
                 options="requests.dataOptions"
-                rows="requests.data" class="material">
-            </dtable>
+                data="requests.data">
+            </requests-list>
+
         </md-content>
     </div>
 

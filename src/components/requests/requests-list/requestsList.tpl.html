@@ -1,0 +1,15 @@
+<dtable
+	class="material"
+	options="$ctrl.options"
+	rows="$ctrl.data">
+
+			<column name="Номер" width="60">{{ $row.id }}</column>
+			<column name="Дата">{{ $row.applyDate | localdate }}</column>
+			<column name="Заголовок" width="200">{{ $row.header }}</column>
+			<column name="Задача" width="200">{{ $row.task }}</column>
+			<!-- <column name="Элемент задачи" width="200">{{$row.taskElement}}</column> -->
+			<column name="Высокий">{{ $row.priority }}</column>
+			<column name="Конф.">{{ $row.confidential }}</column>
+			<column name="Статус">{{ $row.status }}</column>
+			
+</dtable>

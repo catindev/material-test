@@ -21,7 +21,7 @@ module.exports = {
 			'angular-animate',
 			'angular-sanitize',
 			'angular-material',
-			'angular-data-table',
+			'angular-data-table/release/dataTable.helpers.js',
 		],
   },
 

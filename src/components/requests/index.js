@@ -1,3 +1,5 @@
+import 'angular-material/angular-material.min.css';
+import 'components/requests/common/table.css';
 
 /* Subcomponents */
 import searchFilter from 'components/requests/search-filter';
@@ -11,14 +13,23 @@ import {
 	descriptionForm,
 	actionsForm
 } from 'components/requests/new-request/forms';
-import newRequestCtrl from 'components/requests/new-request/new.controller.js';
+
+import localdate from 'components/requests/localdate';
+import requestsList from 'components/requests/requests-list';
+import newRequestCtrl from 'components/requests/new-request/new.controller';
+
 
 // Common
 import routesConfig from './routes.config';
 import requests from './requests.component';
 
 export default angular
-	.module( 'app.requests', [ 'ngAnimate', 'ngSanitize', 'ngRoute' ] )
+	.module( 'app.requests', [
+		'ngAnimate',
+		'ngSanitize',
+		'ngRoute',
+		'data-table',
+	])
 	.config( routesConfig )
 
 	// new request form definitions
@@ -30,6 +41,8 @@ export default angular
 	.component( 'actionsForm', actionsForm )
 
 	.component( 'searchFilter', searchFilter )
+	.component( 'requestsList', requestsList )
 	.component( 'requests', requests )
+	.filter( 'localdate', localdate )
 	.controller( 'newRequestController', newRequestCtrl )
 	.name;

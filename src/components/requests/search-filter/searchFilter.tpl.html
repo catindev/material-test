@@ -1,5 +1,105 @@
-<div flex style="width:50%;">
-	<p>
-		Filter form
-	</p>
+<div style="font-size:14px;">
+
+	<md-input-container class="md-block">
+			<label>Статус</label>
+			<md-select name="group" ng-model="group">
+					<md-option value="1">Черновик</md-option>
+					<md-option value="2">Отправлен</md-option>
+					<md-option value="2">Приоритет не согласован</md-option>
+					<md-option value="2">Не принято</md-option>
+			</md-select>
+	</md-input-container>
+
+	<md-input-container class="md-block">
+		<label>Номер обращения</label>
+		<input/>
+	</md-input-container>
+
+	<md-divider>
+		<p>Период</p>
+
+	<div>
+		<md-datepicker
+			ng-model="myDate2"
+			md-placeholder="Начало периода">
+		</md-datepicker>
+	</div>
+
+	<div style="margin:15px 0;">
+		<md-datepicker
+			ng-model="myDate1"
+			md-placeholder="Конец периода">
+		</md-datepicker>
+	</div>
+
+	</md-divider>
+
+	<md-divider>
+		<p>Услуги</p>
+
+		<md-input-container class="md-block">
+				<label>Группа процессов</label>
+				<md-select name="group" ng-model="group1">
+						<md-option value="1"></md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+				<label>Процесс</label>
+				<md-select name="group" ng-model="group2">
+						<md-option value="1"></md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+				<label>Подпроцесс</label>
+				<md-select name="group" ng-model="group3">
+						<md-option value="1"></md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+				<label>Задача</label>
+				<md-select name="group" ng-model="group4">
+						<md-option value="1"></md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+				<label>Элементы задачи</label>
+				<md-select name="group" ng-model="group5">
+						<md-option value="1"></md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<label>Поиск по заголовку</label>
+			<input/>
+		</md-input-container>
+	</md-divider>
+
+	<md-divider>
+		<p>Высокий приоритет</p>
+		<md-radio-group ng-model="pselected" layout="row">
+		  <md-radio-button class="md-primary" value="1">Всё</md-radio-button>
+			<md-radio-button class="md-primary" value="2">Да</md-radio-button>
+			<md-radio-button class="md-primary" value="3">Нет</md-radio-button>
+		</md-radio-group>
+		<div class="md-padding"></div>
+	</md-divider>
+
+	<md-divider>
+		<p>Конфиденциально</p>
+		<md-radio-group ng-model="cselected" layout="row">
+			<md-radio-button class="md-primary" value="1">Всё</md-radio-button>
+			<md-radio-button class="md-primary" value="2">Да</md-radio-button>
+			<md-radio-button class="md-primary" value="3">Нет</md-radio-button>
+		</md-radio-group>
+		<div class="md-padding"></div>
+	</md-divider>
+
+	<md-actions layout="row" layout-align="start center">
+    <md-button class="md-raised md-primary">Применить</md-button>
+    <md-button class="md-raised">Сбросить</md-button>
+  </md-actions>
 </div>
