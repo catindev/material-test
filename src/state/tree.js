@@ -2,23 +2,29 @@ import Baobab from 'baobab';
 
 const config = {
 	maxHistory: 10,
-	validate: validation
+	validate: logger
 };
 
 const initialState = {
+	userType: false,
+	requests: [],
 	newRequestServices: {
 		PROCESS_GROUP: { list: [], selected: null },
 		PROCESS: { list: [], selected: null },
 		SUBPROCESS: { list: [], selected: null },
 		TASK: { list: [], selected: null },
 		TASK_ELEMENT: { list: [], selected: null },
-	}
+	},
+	newRequestForm: {
+		data: {},
+		valid: false
+	},
 };
 
-function validation(previousState, newState, affectedPaths) {
-	console.groupCollapsed('validator:');
-	console.log('previous state', previousState);
-	console.log('new state', newState);
+function logger(previousState, newState, affectedPaths) {
+	console.groupCollapsed('state:');
+	console.log('previous', previousState);
+	console.log('new', newState);
 	console.log('affected paths', affectedPaths);
 	console.groupEnd();
 }

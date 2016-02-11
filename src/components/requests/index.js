@@ -16,7 +16,7 @@ import {
 
 import localdate from 'components/requests/localdate';
 import requestsList from 'components/requests/requests-list';
-import newRequestCtrl from 'components/requests/new-request/new.controller';
+import newRequestController from 'components/requests/new-request';
 
 
 // Common
@@ -24,12 +24,14 @@ import routesConfig from './routes.config';
 import requests from './requests.component';
 
 export default angular
+
 	.module( 'app.requests', [
 		'ngAnimate',
 		'ngSanitize',
 		'ngRoute',
 		'data-table',
 	])
+
 	.config( routesConfig )
 
 	// new request form definitions
@@ -44,5 +46,6 @@ export default angular
 	.component( 'requestsList', requestsList )
 	.component( 'requests', requests )
 	.filter( 'localdate', localdate )
-	.controller( 'newRequestController', newRequestCtrl )
+	.controller( 'newRequestController', newRequestController )
+
 	.name;

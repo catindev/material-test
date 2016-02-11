@@ -3,7 +3,8 @@ import template from './actionsForm.tpl.html';
 const bindings = {
     onCancel: '&',
     onSubmit: '&',
-    onSend: '&'
+    onSend: '&',
+    active: '<'
 };
 
 export default {

@@ -1,6 +1,12 @@
 .md-datepicker-input { min-width: 200px !important; }
 
-label { color: #444 !important; }
+.md-input, md-select { background-color: #F7F7F7 !important; }
+.md-placeholder { color: #444 !important; }
+
+/* длинные значения в select скрываются когда он упирается в край бокса */
+.md-select-value { overflow: hidden; }
+
+label { margin-bottom: 2px; }
 
 ng-md-icon svg {
 	pointer-events: none;

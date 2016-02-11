@@ -1,14 +1,14 @@
 {
-  "name": "ngpack",
-  "version": "1.1.0",
+  "name": "material-test",
+  "version": "1.2.0",
   "description": "AngularJS + Webpack + CSS-modules + Baobab",
   "main": "index.js",
   "scripts": {
     "test": "webpack",
-    "clean": "rm -rf build",
-    "devmode": "set NODE_ENV=development",
+    "clean": "rm -rf public",
+    "devmode": "export NODE_ENV=development",
     "dev": "npm run devmode && webpack-dev-server --content-base src/ --hot --history-api-fallback --inline --progress --port 8081",
-    "build": "npm run clean && set NODE_ENV=production && webpack -p"
+    "build": "npm run clean && export NODE_ENV=production && webpack"
   },
   "repository": {
     "type": "git",
@@ -39,12 +39,15 @@
     "angular-animate": "^1.5.0",
     "angular-aria": "^1.5.0",
     "angular-data-table": "^0.4.11",
+    "angular-file-upload": "^2.2.0",
     "angular-material": "^1.0.5",
     "angular-route": "^1.4.8",
     "angular-sanitize": "^1.4.8",
     "babel-eslint": "^5.0.0-beta6",
     "babel-preset-stage-0": "^6.3.13",
     "baobab": "^2.2.1",
-    "extract-text-webpack-plugin": "^1.0.1"
+    "extract-text-webpack-plugin": "^1.0.1",
+    "livr": "0.0.14",
+    "superagent": "^1.7.2"
   }
 }

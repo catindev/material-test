@@ -6,7 +6,6 @@ import 'common/theme.css';
 import requests from 'components/requests';
 
 // Common
-import 'common/angular-material-icons';
 import themeConfig from 'common/angular-material-theme.config';
 import routerConfig from 'common/routes.config';
 
@@ -15,7 +14,6 @@ angular
 		'ngMaterial',
 		'ngSanitize',
 		'ngRoute',
-		'ngMdIcons',
 		requests
 	])
 	.config( routerConfig )

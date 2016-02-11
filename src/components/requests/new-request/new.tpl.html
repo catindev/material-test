@@ -1,6 +1,6 @@
 <md-dialog ng-class="newRequest.styles.dialog">
 
-	 <form name="loginForm">
+	 <form name="requestForm">
 
 			<md-toolbar ng-class="newRequest.styles.toolbar">
 				<div class="md-toolbar-tools">
@@ -24,29 +24,25 @@
 				<services-form
 					styles="newRequest.styles"
 					data="newRequest.newRequestServices.get()"
-					change="newRequest.change({ level: level, value: value })">
+					change="newRequest.OnServiceChange({ level: level, value: value })">
 				</services-form>
 
 				<!-- Приоритет и сроки -->
-				<priority-form styles="newRequest.styles"></priority-form>
+				<priority-form
+					styles="newRequest.styles"
+					change="newRequest.onFormChange({key: key, value: value})">
+				</priority-form>
 
 				<!-- Суть обращения -->
-				<description-form styles="newRequest.styles"></description-form>
+				<description-form
+					styles="newRequest.styles"
+					change="newRequest.onFormChange({key: key, value: value})">
+				</description-form>
 
-				<div class="">
-					<p>serviceId: {{ loginForm.serviceId.$modelValue }}</p>
-					<p>requester: {{ loginForm.requester.$modelValue }}</p>
-					<p>confidential: {{ loginForm.confidential.$modelValue }}</p>
-					<p>priority: {{ loginForm.priority.$modelValue }}</p>
-					<p>priorityReason: {{ loginForm.priorityReason.$modelValue }}</p>
-					<p>title: {{ loginForm.title.$modelValue }}</p>
-					<p>description: {{ loginForm.description.$modelValue }}</p>
-					<p>desiredResolutionDate: {{ loginForm.desiredResolutionDate.$modelValue }}</p>
-				</div>
 			</md-content>
-
 			<!-- Панель действий -->
 			<actions-form
+					active="newRequest.newRequestForm.get().valid"
 					on-cancel="newRequest.dialog.hide()">
 			</actions-form>
 	 </form>
