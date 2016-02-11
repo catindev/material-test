@@ -1,6 +1,13 @@
+import { inject, tree } from 'state';
 import styles from './newRequest.less';
+import {
+	getProcessGroups,
+	changeServices
+} from './services/actions';
 
-function Controller($mdDialog) {
+function Controller( $mdDialog ) {
+
+	inject('newRequestServices', this);
 
 	this.styles = styles;
 	this.dialog = $mdDialog;
@@ -10,6 +17,12 @@ function Controller($mdDialog) {
 		bdirection: 'Бизнес-направление',
 		bdevelopment: 'Блок развития'
 	}
+
+	this.change = changeServices;
+
+	///
+
+	getProcessGroups();
 
 }
 

@@ -1,4 +1,4 @@
-import mock from './common/dataMock';
+import mock from './common/mocks/dataMock';
 
 // TODO: move to common
 const checkSession = ($q) => {

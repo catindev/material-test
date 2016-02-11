@@ -21,7 +21,11 @@
 				<customer-form styles="newRequest.styles"></customer-form>
 
 				<!-- Каталог услуг -->
-				<services-form styles="newRequest.styles"></services-form>
+				<services-form
+					styles="newRequest.styles"
+					data="newRequest.newRequestServices.get()"
+					change="newRequest.change({ level: level, value: value })">
+				</services-form>
 
 				<!-- Приоритет и сроки -->
 				<priority-form styles="newRequest.styles"></priority-form>
@@ -29,6 +33,16 @@
 				<!-- Суть обращения -->
 				<description-form styles="newRequest.styles"></description-form>
 
+				<div class="">
+					<p>serviceId: {{ loginForm.serviceId.$modelValue }}</p>
+					<p>requester: {{ loginForm.requester.$modelValue }}</p>
+					<p>confidential: {{ loginForm.confidential.$modelValue }}</p>
+					<p>priority: {{ loginForm.priority.$modelValue }}</p>
+					<p>priorityReason: {{ loginForm.priorityReason.$modelValue }}</p>
+					<p>title: {{ loginForm.title.$modelValue }}</p>
+					<p>description: {{ loginForm.description.$modelValue }}</p>
+					<p>desiredResolutionDate: {{ loginForm.desiredResolutionDate.$modelValue }}</p>
+				</div>
 			</md-content>
 
 			<!-- Панель действий -->

@@ -1,3 +1,8 @@
 .md-datepicker-input { min-width: 200px !important; }
 
 label { color: #444 !important; }
+
+ng-md-icon svg {
+	pointer-events: none;
+  display: block;
+}

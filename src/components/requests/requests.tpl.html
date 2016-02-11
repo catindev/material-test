@@ -26,7 +26,7 @@
 
         <md-toolbar ng-class="requests.styles.toolbar">
             <div class="md-toolbar-tools md-padding">
-                <h1><span>Обращения</span></h1>
+                <h1 style="font-size:24px"><span>Обращения</span></h1>
                 <span flex></span>
                 <md-button
                     class="md-raised md-primary"
@@ -38,7 +38,7 @@
 
         <md-content layout="column"
             flex class="md-padding"
-            style="background: rgb(247, 247, 247);">
+            ng-class="requests.styles.bg">
 
             <!-- Список обращений -->
             <requests-list

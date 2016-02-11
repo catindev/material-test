@@ -4,7 +4,16 @@ const config = {
 	maxHistory: 10,
 	validate: validation
 };
-const initialState = { buttons: [] };
+
+const initialState = {
+	newRequestServices: {
+		PROCESS_GROUP: { list: [], selected: null },
+		PROCESS: { list: [], selected: null },
+		SUBPROCESS: { list: [], selected: null },
+		TASK: { list: [], selected: null },
+		TASK_ELEMENT: { list: [], selected: null },
+	}
+};
 
 function validation(previousState, newState, affectedPaths) {
 	console.groupCollapsed('validator:');

@@ -6,21 +6,25 @@
 	<div layout="column" ng-class="$ctrl.styles.formInner">
 
 	<md-input-container class="md-block">
-		<md-checkbox ng-model="priority" aria-label="Checkbox 1">
-			Высокий приоритет
+		<md-checkbox
+			ng-model="$ctrl.model.priority"
+			aria-label="Высокий приоритет"
+			name="priority">
+				Высокий приоритет
 		</md-checkbox>
 	</md-input-container>
 
 	<div flex layout-gt-sm="row">
-		<md-input-container flex-gt-sm style="width:100px">
+		<md-input-container flex-gt-sm>
 			<label>Нормативный срок выполнения</label>
-			<input ng-model="newRequest.asdsad"/>
+			<input ng-model="$ctrl.model.estimate"/>
 		</md-input-container>
 
 		<div style="margin:15px 0;">
 			<md-datepicker
-				ng-model="myDate"
-				md-placeholder="Желаемый">
+				ng-model="$ctrl.model.estimateWanted"
+				md-placeholder="Желаемый срок выполнения"
+				name="desiredResolutionDate">
 			</md-datepicker>
 		</div>
 	</div>
@@ -28,9 +32,10 @@
 	<md-input-container class="md-block">
 		<label>Обоснование приоритета</label>
 		<textarea
-			ng-model="qwewqeeeee"
+			ng-model="$ctrl.model.reason"
 			md-maxlength="150"
 			rows="5"
-			md-select-on-focus>
+			md-select-on-focus
+			name="priorityReason">
 	</md-input-container>
 </div>

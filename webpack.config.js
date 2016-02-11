@@ -1,10 +1,10 @@
 'use strict';
 
 const NODE_ENV = process.env.NODE_ENV || 'development';
-
 const path = require('path'),
 	webpack = require('webpack'),
-	HtmlWebpackPlugin = require('html-webpack-plugin');
+	HtmlWebpackPlugin = require('html-webpack-plugin'),
+	ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 let APP = __dirname + '/src';
 
@@ -71,10 +71,6 @@ module.exports = {
 					test: /\.html$/,
 					loader: 'raw'
 				},
-				// {
-        // test: /\.svg$/,
-        // loader: 'svg-inline'
-    		// }
 	    ]
 	},
 
@@ -92,7 +88,9 @@ module.exports = {
 	devtool: NODE_ENV === 'development' ? 'cheap-inline-module-source-map' : null
 };
 
-if (NODE_ENV === 'production') {
+if (NODE_ENV !== 'development') {
+	console.log('MODE:PROD');
+
 	module.exports.plugins.push(
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
@@ -102,8 +100,17 @@ if (NODE_ENV === 'production') {
 			}
 		})
 	);
+
+	// module.exports.module.loaders.push({
+	// 	test: /\.css$/,
+	// 	loader: ExtractTextPlugin.extract("style-loader", "css-loader")
+	// });
+	// module.exports.plugins.push( new ExtractTextPlugin("styles.css") );
+
   module.exports.entry.app = APP + '/index.js';
+
 } else {
+	console.log('MODE:DEV');
 
   module.exports.entry.app = [
     'webpack/hot/dev-server',
