@@ -1,7 +1,7 @@
 import template from './requests.tpl.html';
 import controller from './requests.controller.js';
 
-const bindings = { session: '=' };
+const bindings = { session: '<', data: '<' };
 
 export default {
   bindings,

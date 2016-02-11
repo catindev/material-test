@@ -21,6 +21,7 @@ module.exports = {
 			'angular-animate',
 			'angular-sanitize',
 			'angular-material',
+			'angular-data-table',
 		],
   },
 
@@ -66,7 +67,14 @@ module.exports = {
 						test: /\.jpg|\.png|\.mp3/,
 						loader: 'file-loader?name=assets/[hash][name].[ext]'
 				},
-		    { test: /\.html$/, loader: 'raw' }
+		    {
+					test: /\.html$/,
+					loader: 'raw'
+				},
+				// {
+        // test: /\.svg$/,
+        // loader: 'svg-inline'
+    		// }
 	    ]
 	},
 

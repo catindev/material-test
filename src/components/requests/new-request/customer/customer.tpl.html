@@ -1,0 +1,28 @@
+<div>
+	<md-subheader ng-class="$ctrl.styles.subtitle">
+		Заказчик обращения
+	</md-subheader>
+
+	<div layout="column" ng-class="$ctrl.styles.formInner">
+
+		<div flex>
+			<md-input-container class="md-block">
+				<label>Заказчик</label>
+				<input ng-model="$ctrl.data.customer">
+			</md-input-container>
+		</div>
+
+		<div flex layout-gt-sm="row">
+			<md-input-container flex-gt-sm>
+				<label>Бизнес-направление</label>
+				<input ng-model="$ctrl.data.one">
+			</md-input-container>
+
+			<md-input-container flex-gt-sm>
+				<label>Блок развития</label>
+				<input ng-model="$ctrl.data.two">
+			</md-input-container>
+		</div>
+
+	</div>
+</div>

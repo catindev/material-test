@@ -1,0 +1,56 @@
+<div class="">
+	<md-subheader ng-class="$ctrl.styles.subtitle">
+		Каталог услуг
+	</md-subheader>
+
+	<div layout="column" ng-class="$ctrl.styles.formInner">
+
+		<md-input-container class="md-block">
+				<label>Группа процессов</label>
+				<md-select name="group" ng-model="group">
+						<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+						<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+				</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<label>Процесс</label>
+			<md-select name="process" ng-model="process">
+					<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+					<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<label>Подпроцесс</label>
+			<md-select name="subprocess" ng-model="subprocess">
+					<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+					<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<label>Задача</label>
+			<md-select name="task" ng-model="task">
+					<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+					<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<label>Элементы задачи</label>
+			<md-select name="elements" ng-model="elements">
+					<md-option value="1">Юридическое сопровождение банковской деятельности</md-option>
+					<md-option value="2">Юридическое сопровождение предпроблемной и проблемной задолженности</md-option>
+			</md-select>
+		</md-input-container>
+
+		<md-input-container class="md-block">
+			<md-checkbox ng-model="secret" aria-label="Checkbox 1">
+				Конфиденциально
+			</md-checkbox>
+		</md-input-container>
+
+	</div>
+
+</div>

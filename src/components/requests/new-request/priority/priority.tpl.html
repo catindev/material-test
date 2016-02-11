@@ -1,0 +1,36 @@
+<div>
+	<md-subheader ng-class="$ctrl.styles.subtitle">
+		Приоритет и сроки
+	</md-subheader>
+
+	<div layout="column" ng-class="$ctrl.styles.formInner">
+
+	<md-input-container class="md-block">
+		<md-checkbox ng-model="priority" aria-label="Checkbox 1">
+			Высокий приоритет
+		</md-checkbox>
+	</md-input-container>
+
+	<div flex layout-gt-sm="row">
+		<md-input-container flex-gt-sm style="width:100px">
+			<label>Нормативный срок выполнения</label>
+			<input ng-model="newRequest.asdsad"/>
+		</md-input-container>
+
+		<div style="margin:15px 0;">
+			<md-datepicker
+				ng-model="myDate"
+				md-placeholder="Желаемый">
+			</md-datepicker>
+		</div>
+	</div>
+
+	<md-input-container class="md-block">
+		<label>Обоснование приоритета</label>
+		<textarea
+			ng-model="qwewqeeeee"
+			md-maxlength="150"
+			rows="5"
+			md-select-on-focus>
+	</md-input-container>
+</div>

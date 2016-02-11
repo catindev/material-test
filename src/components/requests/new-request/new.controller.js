@@ -1,21 +1,16 @@
+import styles from './newRequest.less';
+
 function Controller($mdDialog) {
-	this.close = function() {
-		return $mdDialog.hide();
+
+	this.styles = styles;
+	this.dialog = $mdDialog;
+
+	this.test1 = {
+		initiator: 'Пятилова',
+		bdirection: 'Бизнес-направление',
+		bdevelopment: 'Блок развития'
 	}
 
-	this.data = {
-		one: {
-			name: 'Пятилова',
-			n: 'Бизнес-направление',
-			b: 'Блок развития'
-		},
-
-		two: {
-			name: 'Новиков',
-			n: 'Бизнес-направление',
-			b: 'Блок развития'
-		}
-	}
 }
 
 export default Controller;

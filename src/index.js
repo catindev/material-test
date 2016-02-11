@@ -11,7 +11,7 @@ angular
 		'ngMaterial',
 		'ngSanitize',
 		'ngRoute',
-		//'ngMdIcons',
+		'data-table',
 		requests
 	])
 	.config( routerConfig );

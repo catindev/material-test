@@ -11,11 +11,26 @@
 
 
     <!-- Список обращений -->
-    <div layout="column" flex>
+    <div layout="column" flex style="background:#ccc">
+
+        <md-toolbar ng-class="requests.styles.toolbar">
+            <div class="md-toolbar-tools">
+                <h1><span>Обращения</span></h1>
+                <span flex></span>
+                <md-button
+                    class="md-raised md-primary"
+                    ng-click="requests.newRequestForm()">
+                    Создать обращение
+                </md-button>
+            </div>
+        </md-toolbar>
+
         <md-content layout="column" flex class="md-padding">
-            <md-button ng-click="requests.newRequestForm()" class="md-raised">
-                Создать обращение
-            </md-button>
+            <!-- Список обращений тут -->
+            <dtable
+                options="requests.dataOptions"
+                rows="requests.data" class="material">
+            </dtable>
         </md-content>
     </div>
 

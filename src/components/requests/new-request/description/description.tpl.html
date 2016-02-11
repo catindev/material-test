@@ -1,0 +1,24 @@
+<div>
+	<md-subheader ng-class="$ctrl.styles.subtitle">
+		Заказчик обращения
+	</md-subheader>
+
+	<div layout="column" ng-class="$ctrl.styles.formInner">
+
+		<div flex>
+			<md-input-container class="md-block">
+				<label>Заголовок</label>
+				<input ng-model="newRequest.hdr">
+			</md-input-container>
+		</div>
+
+		<div flex>
+			<md-input-container class="md-block">
+				<label>Описание</label>
+				<textarea ng-model="newRequest.desc" md-maxlength="150" rows="5">
+			</md-input-container>
+		</div>
+
+	</div>
+
+</div>

@@ -1,0 +1,29 @@
+<div>
+	<md-subheader ng-class="$ctrl.styles.subtitle">
+		Инициатор обращения
+	</md-subheader>
+	
+	<div layout="column" ng-class="$ctrl.styles.formInner">
+
+		<div flex>
+			<md-input-container class="md-block">
+				<label>Инициатор</label>
+				<input ng-model="$ctrl.data.initiator" name="initiator">
+			</md-input-container>
+		</div>
+
+		<div flex layout-gt-sm="row">
+			<md-input-container flex-gt-sm>
+				<label>Блок направления</label>
+				<input ng-model="$ctrl.data.bdirection" name="bdirection">
+			</md-input-container>
+
+			<md-input-container flex-gt-sm>
+				<label>Блок развития</label>
+				<input ng-model="$ctrl.data.bdevelopment" name="bdevelopment">
+			</md-input-container>
+		</div>
+
+	</div>
+
+</div>
