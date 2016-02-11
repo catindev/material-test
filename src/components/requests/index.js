@@ -13,6 +13,7 @@ import {
 	descriptionForm,
 	actionsForm
 } from 'components/requests/new-request/forms';
+import serviceList from 'components/requests/new-request/services/select';
 
 import localdate from 'components/requests/localdate';
 import requestsList from 'components/requests/requests-list';
@@ -41,6 +42,7 @@ export default angular
 	.component( 'priorityForm', priorityForm )
 	.component( 'descriptionForm', descriptionForm )
 	.component( 'actionsForm', actionsForm )
+	.component( 'serviceList', serviceList )
 
 	.component( 'searchFilter', searchFilter )
 	.component( 'requestsList', requestsList )

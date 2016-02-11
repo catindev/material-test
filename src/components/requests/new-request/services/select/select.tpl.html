@@ -1,0 +1,15 @@
+<md-input-container class="md-block">
+		<label>{{ $ctrl.title }}</label>
+		<md-select name="{{ $ctrl.level }}"
+			ng-model="$ctrl.model"
+			ng-change="$ctrl.change({
+				level: $ctrl.level,
+				value: $ctrl.model
+			})">
+				<md-option
+					ng-repeat="item in $ctrl.items track by $index"
+					value="{{ item.id }}">
+						{{ item.name }}
+				</md-option>
+		</md-select>
+</md-input-container>

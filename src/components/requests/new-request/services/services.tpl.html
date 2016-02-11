@@ -5,88 +5,59 @@
 
 	<div layout="column" ng-class="$ctrl.styles.formInner">
 
-		<!-- TODO: сделать селекты переиспользуемым компонентом -->
+		<service-list
+			title="Группа процессов"
+			level="PROCESS_GROUP"
+			change="$ctrl.onServiceChange({
+				level: level,
+				value: value
+			})"
+			items="$ctrl.newRequestServices.get().PROCESS_GROUP.list">
+		</service-list>
 
-		<md-input-container class="md-block">
-				<label>Группа процессов</label>
-				<md-select name="PROCESS_GROUP"
-					ng-model="$ctrl.model.PROCESS_GROUP"
-					ng-change="$ctrl.change({
-						level: 'PROCESS_GROUP',
-						value: $ctrl.model.PROCESS_GROUP
-					})">
-						<md-option
-							ng-repeat="PROCESS_GROUP in $ctrl.data.PROCESS_GROUP.list track by $index"
-							value="{{ PROCESS_GROUP.id }}">
-								{{ PROCESS_GROUP.name }}
-						</md-option>
-				</md-select>
-		</md-input-container>
+		<service-list
+			ng-if="$ctrl.newRequestServices.get().PROCESS_GROUP.selected"
+			title="Процесс"
+			level="PROCESS"
+			change="$ctrl.onServiceChange({
+				level: level,
+				value: value
+			})"
+			items="$ctrl.newRequestServices.get().PROCESS.list">
+		</service-list>
 
-		<md-input-container class="md-block" ng-if="$ctrl.model.PROCESS_GROUP">
-			<label>Процесс</label>
-			<md-select name="PROCESS"
-				ng-model="$ctrl.model.PROCESS"
-				ng-change="$ctrl.change({
-					level: 'PROCESS',
-					value: $ctrl.model.PROCESS
-				})">
-					<md-option
-						ng-repeat="PROCESS in $ctrl.data.PROCESS.list track by $index"
-						value="{{ PROCESS.id }}">
-							{{ PROCESS.name }}
-					</md-option>
-			</md-select>
-		</md-input-container>
+		<service-list
+			ng-if="$ctrl.newRequestServices.get().PROCESS.selected"
+			title="Процесс"
+			level="SUBPROCESS"
+			change="$ctrl.onServiceChange({
+				level: level,
+				value: value
+			})"
+			items="$ctrl.newRequestServices.get().SUBPROCESS.list">
+		</service-list>
 
-		<md-input-container class="md-block" ng-if="$ctrl.model.PROCESS">
-			<label>Подпроцесс</label>
-			<md-select name="SUBPROCESS"
-				ng-model="$ctrl.model.SUBPROCESS"
-				ng-change="$ctrl.change({
-					level: 'SUBPROCESS',
-					value: $ctrl.model.SUBPROCESS
-				})">
-					<md-option
-						ng-repeat="SUBPROCESS in $ctrl.data.SUBPROCESS.list track by $index"
-						value="{{ SUBPROCESS.id }}">
-							{{ SUBPROCESS.name }}
-					</md-option>
-			</md-select>
-		</md-input-container>
+		<service-list
+			ng-if="$ctrl.newRequestServices.get().SUBPROCESS.selected"
+			title="Задача"
+			level="TASK"
+			change="$ctrl.onServiceChange({
+				level: level,
+				value: value
+			})"
+			items="$ctrl.newRequestServices.get().TASK.list">
+		</service-list>
 
-		<md-input-container class="md-block" ng-if="$ctrl.model.SUBPROCESS">
-			<label>Задача</label>
-			<md-select name="TASK"
-				ng-model="$ctrl.model.TASK"
-				ng-change="$ctrl.change({
-					level: 'TASK',
-					value: $ctrl.model.TASK
-				})">
-					<md-option
-						ng-repeat="TASK in $ctrl.data.TASK.list track by $index"
-						value="{{ TASK.id }}">
-							{{ TASK.name }}
-					</md-option>
-			</md-select>
-		</md-input-container>
-
-		<md-input-container class="md-block" ng-if="$ctrl.model.TASK">
-			<label>Элементы задачи</label>
-			<md-select
-				name="serviceId"
-				ng-model="$ctrl.model.TASK_ELEMENT"
-				ng-change="$ctrl.change({
-					level: 'TASK_ELEMENT',
-					value: $ctrl.model.TASK_ELEMENT
-				})">
-					<md-option
-						ng-repeat="TASK_ELEMENT in $ctrl.data.TASK_ELEMENT.list track by $index"
-						value="{{ TASK_ELEMENT.id }}">
-							{{ TASK_ELEMENT.name }}
-					</md-option>
-			</md-select>
-		</md-input-container>
+		<service-list
+			ng-if="$ctrl.newRequestServices.get().TASK.selected"
+			title="Задача"
+			level="TASK_ELEMENT"
+			change="$ctrl.onServiceChange({
+				level: level,
+				value: value
+			})"
+			items="$ctrl.newRequestServices.get().TASK_ELEMENT.list">
+		</service-list>
 
 		<md-input-container class="md-block">
 			<md-checkbox

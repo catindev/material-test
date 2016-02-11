@@ -1,4 +1,5 @@
 import template from './services.tpl.html';
+import controller from './services.controller';
 
 const bindings = {
     data: '<',
@@ -8,5 +9,6 @@ const bindings = {
 
 export default {
     bindings,
-    template
+    template,
+    controller
 };
