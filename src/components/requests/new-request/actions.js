@@ -8,6 +8,17 @@ const changeForm = (data) => {
 	if ( validate(form.get().data) ) form.set('valid', true);
 }
 
+const getRequests = () => {
+	request
+		.get('api/request/')
+		.end(function(err, response){
+			tree.set(
+				'requests',
+				JSON.parse(response.text)
+			);
+		});
+}
+
 export {
 	changeForm,
 };

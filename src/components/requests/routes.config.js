@@ -1,16 +1,13 @@
-import mock from './common/mocks/dataMock';
 import checkSession from 'common/checkSession';
 
-// TODO: may be need move to FLUX
-const getRequests = ($http, $q) => {
-	//return $http.get('http://localhost:8080/api/request/');
-	return $q.when( mock );
+const getRequests = ($http) => {
+	return $http.get('/api/request/');
 };
-getRequests.$inject = ['$http', '$q'];
+getRequests.$inject = ['$http'];
 
 function controller(session, requests) {
 	this.session = session;
-	this.requests = requests;
+	this.requests = requests.data;
 }
 controller.$inject = ['session', 'requests'];
 
