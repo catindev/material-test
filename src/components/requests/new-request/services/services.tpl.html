@@ -5,6 +5,8 @@
 
 	<div layout="column" ng-class="$ctrl.styles.formInner">
 
+		<!-- TODO: сделать селекты переиспользуемым компонентом -->
+
 		<md-input-container class="md-block">
 				<label>Группа процессов</label>
 				<md-select name="PROCESS_GROUP"
@@ -88,6 +90,7 @@
 
 		<md-input-container class="md-block">
 			<md-checkbox
+				class="md-primary"
 				ng-model="secret"
 				aria-label="Конфиденциально"
 				name="confidential">

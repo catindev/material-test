@@ -91,15 +91,15 @@ module.exports = {
 if (NODE_ENV !== 'development') {
 	console.log('MODE:PROD');
 
-	module.exports.plugins.push(
-		new webpack.optimize.UglifyJsPlugin({
-			compress: {
-				warnings: false,
-				drop_console: true,
-				unsafe: true
-			}
-		})
-	);
+	// module.exports.plugins.push(
+	// 	new webpack.optimize.UglifyJsPlugin({
+	// 		compress: {
+	// 			warnings: false,
+	// 			drop_console: true,
+	// 			unsafe: true
+	// 		}
+	// 	})
+	// );
 
 	// module.exports.module.loaders.push({
 	// 	test: /\.css$/,

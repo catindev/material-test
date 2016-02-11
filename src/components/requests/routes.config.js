@@ -1,21 +1,18 @@
 import mock from './common/mocks/dataMock';
+import checkSession from 'common/checkSession';
 
-// TODO: move to common
-const checkSession = ($q) => {
-	//	if (!authService.check() ) $location.path('/');
-	return $q.when('session-resolved');
-};
-
-// TODO: move to FLUX
+// TODO: may be need move to FLUX
 const getRequests = ($http, $q) => {
 	//return $http.get('http://localhost:8080/api/request/');
 	return $q.when( mock );
 };
+getRequests.$inject = ['$http', '$q'];
 
 function controller(session, requests) {
 	this.session = session;
 	this.requests = requests;
 }
+controller.$inject = ['session', 'requests'];
 
 const routesConfig = $routeProvider => {
 	let options = {
