@@ -1,7 +1,7 @@
 import { tree } from 'state';
 import request from 'superagent';
 
-const getRequests = ( cb ) => {
+const getRequests = ( ) => {
 	request
 		.get('api/request/')
 		.end(function(err, response){
@@ -9,7 +9,6 @@ const getRequests = ( cb ) => {
 				'requests',
 				JSON.parse(response.text)
 			);
-			if (cb) cb( JSON.parse(response.text) )
 		});
 }
 

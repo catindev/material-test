@@ -1,9 +1,9 @@
 import checkSession from 'common/checkSession';
 
-const getRequests = ($http) => {
-	return $http.get('/api/request/');
+const getRequests = ($http, $q) => {
+	return $http.get('/api/request/').catch( err=>$q.when([]) );
 };
-getRequests.$inject = ['$http'];
+getRequests.$inject = ['$http', '$q'];
 
 function controller(session, requests) {
 	this.session = session;

@@ -6,8 +6,7 @@
   "scripts": {
     "test": "webpack",
     "clean": "rm -rf public",
-    "devmode": "set NODE_ENV=development",
-    "dev": "npm run devmode && webpack-dev-server --content-base src/ --hot --history-api-fallback --inline --progress --port 8081",
+    "dev": "webpack-dev-server --config webpack.config.dev.js --content-base src/ --hot --history-api-fallback --inline --progress --port 8081",
     "build": "npm run clean && set NODE_ENV=production && webpack"
   },
   "repository": {
