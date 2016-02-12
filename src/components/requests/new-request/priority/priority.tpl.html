@@ -8,9 +8,13 @@
 	<md-input-container class="md-block">
 		<md-checkbox
 			class="md-primary"
-			ng-model="$ctrl.model.priority"
+			ng-model="$ctrl.priority"
 			aria-label="Высокий приоритет"
-			name="priority">
+			name="priority"
+			ng-change="$ctrl.change({
+				key:'priority', 
+				value: $ctrl.priority
+			})">
 				Высокий приоритет
 		</md-checkbox>
 	</md-input-container>
@@ -18,14 +22,18 @@
 	<div flex layout-gt-sm="row">
 		<md-input-container flex-gt-sm>
 			<label>Нормативный срок выполнения</label>
-			<input ng-model="$ctrl.model.estimate"/>
+			<input ng-model="$ctrl.estimate"/>
 		</md-input-container>
 
 		<div style="margin:15px 0;">
 			<md-datepicker
-				ng-model="$ctrl.model.estimateWanted"
+				ng-model="$ctrl.desiredResolutionDate"
 				md-placeholder="Желаемый срок выполнения"
-				name="desiredResolutionDate">
+				name="desiredResolutionDate"
+				ng-change="$ctrl.change({
+					key:'desiredResolutionDate',
+					value: $ctrl.desiredResolutionDate
+				})">
 			</md-datepicker>
 		</div>
 	</div>

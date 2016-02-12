@@ -1,9 +1,9 @@
 import template from './actionsForm.tpl.html';
 
 const bindings = {
-    onCancel: '&',
-    onSubmit: '&',
-    onSend: '&',
+    cancel: '&',
+    save: '&',
+    send: '&',
     active: '<'
 };
 

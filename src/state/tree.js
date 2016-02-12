@@ -17,7 +17,8 @@ const initialState = {
 	},
 	newRequestForm: {
 		data: {},
-		valid: false
+		valid: false,
+		latest: null
 	},
 };
 

@@ -39,9 +39,14 @@
         <md-content layout="column"
             flex class="md-padding"
             ng-class="requests.styles.bg">
-            
+
+            <div ng-if="!requests.data.length" style="text-align:center;color:#ccc;font-size:20px;padding-top:2rem;">
+                Обращений не найдено
+            </div>
+
             <!-- Список обращений -->
             <requests-list
+                ng-if="requests.data.length"
                 options="requests.dataOptions"
                 data="requests.data">
             </requests-list>

@@ -2,7 +2,7 @@ import LIVR from 'livr';
 
 LIVR.Validator.defaultAutoTrim(true);
 var validator = new LIVR.Validator({
-  serviceId: ['required', 'integer'],
+  serviceId: 'required',
   confidential: 'not_empty',
   requester: 'required',
   priority: ['required', { one_of: ['ORDINARY', 'HIGH'] }],

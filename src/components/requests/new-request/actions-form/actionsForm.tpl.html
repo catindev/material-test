@@ -1,13 +1,22 @@
 <md-dialog-actions style="padding: 1rem 2rem">
-	<md-button class="md-raised md-primary" ng-disabled="$ctrl.active === false">
+
+	<md-button
+		class="md-raised md-primary"
+		ng-disabled="$ctrl.active === false"
+		ng-click="$ctrl.send()">
 			Отправить
 	</md-button>
-	<md-button class="md-raised md-primary" ng-disabled="$ctrl.active === false">
+
+	<md-button
+		class="md-raised md-primary"
+		ng-disabled="$ctrl.active === false"
+		ng-click="$ctrl.save();$ctrl.cancel()">
 			Сохранить
 	</md-button>
 
 	<md-button
-		ng-click="$ctrl.onCancel()">
+		ng-click="$ctrl.cancel()">
 			Отменить
 	</md-button>
+
 </md-dialog-actions>

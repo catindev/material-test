@@ -1,6 +1,6 @@
 <div>
 	<md-subheader ng-class="$ctrl.styles.subtitle">
-		Заказчик обращения
+		Суть обращения
 	</md-subheader>
 
 	<div layout="column" ng-class="$ctrl.styles.formInner">
@@ -8,7 +8,13 @@
 		<div flex>
 			<md-input-container class="md-block">
 				<label>Заголовок</label>
-				<input ng-model="$ctrl.model.title" name="title">
+				<input
+					ng-model="$ctrl.title"
+					ng-model-options="{ debounce: 500 }"
+					name="title"
+					ng-change="$ctrl.change({
+						key:'title', value: $ctrl.title
+					})">
 			</md-input-container>
 		</div>
 
@@ -16,10 +22,14 @@
 			<md-input-container class="md-block">
 				<label>Описание</label>
 				<textarea
-					ng-model="$ctrl.model.description"
-					md-maxlength="150"
+					ng-model="$ctrl.description"
+					ng-model-options="{ debounce: 500 }"
+					md-maxlength="140"
 					rows="5"
-					name="description">
+					name="description"
+					ng-change="$ctrl.change({
+						key:'description', value: $ctrl.description
+					})">
 			</md-input-container>
 		</div>
 

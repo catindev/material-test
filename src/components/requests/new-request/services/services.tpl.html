@@ -19,9 +19,12 @@
 		<md-input-container class="md-block">
 			<md-checkbox
 				class="md-primary"
-				ng-model="secret"
+				ng-model="$ctrl.confidential"
 				aria-label="Конфиденциально"
-				name="confidential">
+				name="confidential"
+				ng-change="$ctrl.change({
+					key:'confidential', value: $ctrl.confidential
+				})">
 					Конфиденциально
 			</md-checkbox>
 		</md-input-container>

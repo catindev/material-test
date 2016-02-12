@@ -8,6 +8,8 @@ const path = require('path'),
 
 let APP = __dirname + '/src';
 
+
+
 module.exports = {
 
 	cache: true,
@@ -28,10 +30,15 @@ module.exports = {
 		],
   },
 
-  output: {
-      path: __dirname + '/public',
-      filename: '[name].[hash].js'
-  },
+  // output: {
+  //     path: __dirname + '/public',
+  //     filename: '[name].[hash].js'
+  // },
+
+	output: {
+	    path: 'D:/dev/bank/backend/legal-dep-service-api/target/classes/static',
+	    filename: '[name].[hash].js'
+	},
 
 	resolve: {
     root: path.resolve(APP)
@@ -87,7 +94,8 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: APP + '/index.html',
-			inject: 'body'
+			inject: 'body',
+			filename: './request.html'
 		}),
 		new webpack.optimize.CommonsChunkPlugin(
 			'vendors', 'vendors.[hash].js'

@@ -6,9 +6,9 @@
   "scripts": {
     "test": "webpack",
     "clean": "rm -rf public",
-    "devmode": "export NODE_ENV=development",
+    "devmode": "set NODE_ENV=development",
     "dev": "npm run devmode && webpack-dev-server --content-base src/ --hot --history-api-fallback --inline --progress --port 8081",
-    "build": "npm run clean && export NODE_ENV=production && webpack"
+    "build": "npm run clean && set NODE_ENV=production && webpack"
   },
   "repository": {
     "type": "git",

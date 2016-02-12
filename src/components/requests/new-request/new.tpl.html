@@ -14,36 +14,44 @@
 				<!-- Инициатор обращения -->
 				<initiator-form
 					styles="newRequest.styles"
-					data="newRequest.test1">
+					data="newRequest.test1"
+					change="newRequest.onFormChange({key:key, value:value})">
 				</initiator-form>
 
 				<!-- Заказчик обращения -->
-				<customer-form styles="newRequest.styles"></customer-form>
+				<customer-form
+					styles="newRequest.styles"
+					change="newRequest.onFormChange({key:key, value:value})">
+				</customer-form>
 
 				<!-- Каталог услуг -->
 				<services-form
 					styles="newRequest.styles"
 					data="newRequest.newRequestServices.get()"
-					change="newRequest.OnServiceChange({ level: level, value: value })">
+					change="newRequest.onFormChange({key:key, value:value})">
 				</services-form>
 
 				<!-- Приоритет и сроки -->
 				<priority-form
 					styles="newRequest.styles"
-					change="newRequest.onFormChange({key: key, value: value})">
+					change="newRequest.onFormChange({key:key, value:value})">
 				</priority-form>
 
 				<!-- Суть обращения -->
 				<description-form
 					styles="newRequest.styles"
-					change="newRequest.onFormChange({key: key, value: value})">
+					change="newRequest.onFormChange({key:key, value:value})">
 				</description-form>
 
 			</md-content>
+
 			<!-- Панель действий -->
 			<actions-form
 					active="newRequest.newRequestForm.get().valid"
-					on-cancel="newRequest.dialog.hide()">
+					save="newRequest.saveRequest()"
+					send="newRequest.sendRequest()"
+					cancel="newRequest.dialog.hide()">
 			</actions-form>
+
 	 </form>
  </md-dialog>

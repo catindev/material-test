@@ -1,11 +1,11 @@
 import { inject, tree } from 'state';
-//import { addButton } from './actions';
+
 import styles from './requests.less';
+
 import newRequestTemplate from './new-request/new.tpl.html';
 import config from './common/dataConfig';
 
-function Controller($mdDialog) {
-    //inject('buttons', this);
+function Controller( $mdDialog ) {
 
     this.styles = styles;
     this.dataOptions = config;
