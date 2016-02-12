@@ -5,8 +5,19 @@ import validate from './validator';
 
 let form = tree.select('newRequestForm');
 
+const drop = () => {
+	form.set( 'data', {} );
+	form.set( 'valid', false);
+}
 
-const changeForm = (data) => {
+const setDefaults = () => {
+	form.set( ['data', 'requester'], "Иванов" ); // fake!
+	form.set( ['data', 'priority'], "ORDINARY" );
+	form.set( ['data', 'confidential'], "false" );
+	if ( form.get().latest === 'success') form.set( 'latest', null);
+}
+
+const changeForm = ( data ) => {
 	let value = data.value;
 	if (data.key === 'desiredResolutionDate') value = new Date(value).getTime();
 	if (data.key === 'priority') value ?  value = 'HIGH' : value = 'ORDINARY';
@@ -15,27 +26,9 @@ const changeForm = (data) => {
 	if ( validate(form.get().data) ) form.set('valid', true);
 }
 
-const drop = () => {
-	form.set( 'data', {} );
-	form.set( 'valid', false);
-}
-
-const setDefaults= () => {
-	form.set( ['data', 'requester'], "Иванов" ); // fake!
-	form.set( ['data', 'priority'], "ORDINARY" );
-	form.set( ['data', 'confidential'], "false" );
-	if ( form.get().latest === 'success') form.set( 'latest', null);
-}
-
-const sendRequest = () => {
-	request
-		.get('/api/ref/service?level=PROCESS_GROUP')
-		.end(function(err, response){
-			services.set(
-				['PROCESS_GROUP', 'list'],
-				JSON.parse(response.text)
-			);
-		});
+const submitForm = ( error ) => {
+	form.set( 'latest', error || "success");
+	drop();
 }
 
 const saveRequest = ( cb ) => {
@@ -43,17 +36,25 @@ const saveRequest = ( cb ) => {
 		.post( '/api/request/' )
 		.send( form.get().data )
 		.end( (err, response) => {
-			if (!err && response.ok) {
-				drop();
-				form.set( 'latest', "success");
-			} else {
-				form.set( 'latest', err);
-			}
+			submitForm( err );
+			if ( cb ) cb( err, response );
 		});
+}
+
+const sendRequest = () => {
+	saveRequest( ( err, response ) => {
+		submitForm( err );
+		request
+			.post( `/api/request/${response.body}/process` )
+			.end( (err, response) => {
+				console.log('Starting process ', response.body, 'with', response);
+			});
+	});
 }
 
 export {
 	changeForm,
 	setDefaults,
-	saveRequest
+	saveRequest,
+	sendRequest,
 };

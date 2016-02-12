@@ -4,7 +4,8 @@ import styles from './newRequest.less';
 import {
 	changeForm,
 	setDefaults,
-	saveRequest
+	saveRequest,
+	sendRequest,
 } from './newRequest.actions';
 
 function Controller( $mdDialog ) {
@@ -21,6 +22,7 @@ function Controller( $mdDialog ) {
 
 	this.onFormChange = changeForm;
 	this.saveRequest = saveRequest;
+	this.sendRequest = sendRequest;
 
 	setDefaults();
 }

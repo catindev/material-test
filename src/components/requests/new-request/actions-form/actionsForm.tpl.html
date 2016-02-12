@@ -3,14 +3,14 @@
 	<md-button
 		class="md-raised md-primary"
 		ng-disabled="$ctrl.active === false"
-		ng-click="$ctrl.send()">
+		ng-click="$ctrl.send();$ctrl.cancel();">
 			Отправить
 	</md-button>
 
 	<md-button
 		class="md-raised md-primary"
 		ng-disabled="$ctrl.active === false"
-		ng-click="$ctrl.save();$ctrl.cancel()">
+		ng-click="$ctrl.save();$ctrl.cancel();">
 			Сохранить
 	</md-button>
 

@@ -40,8 +40,10 @@
             flex class="md-padding"
             ng-class="requests.styles.bg">
 
-            <div ng-if="!requests.data.length" style="text-align:center;color:#ccc;font-size:20px;padding-top:2rem;">
-                Обращений не найдено
+            <div 
+                ng-if="!requests.data.length"
+                ng-class="requests.styles.noRequests">
+                    Не найдено ни одного обращения
             </div>
 
             <!-- Список обращений -->
