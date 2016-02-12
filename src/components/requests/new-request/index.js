@@ -10,6 +10,7 @@ import {
 
 function Controller( $mdDialog ) {
 	inject('newRequestForm', this);
+	inject('userType', this);
 
 	this.styles = styles;
 	this.dialog = $mdDialog;

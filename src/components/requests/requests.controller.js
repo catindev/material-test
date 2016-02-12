@@ -11,21 +11,30 @@ function Controller( $mdDialog ) {
     this.dataOptions = config;
 
     this.newRequestForm = newRequestForm;
-    this.dateFormat = dateFormat;
+    this.udRequestForm = udRequestForm;
 
     ///
 
-    function dateFormat(date) {
-        return new Date(date).toLocalDateString();
-    }
+
 
     function newRequestForm() {
-      $mdDialog.show({
-        template: newRequestTemplate,
-        controller: 'newRequestController',
-        controllerAs: 'newRequest'
-      });
+        tree.set('userType', false);
+        $mdDialog.show({
+            template: newRequestTemplate,
+            controller: 'newRequestController',
+            controllerAs: 'newRequest'
+        });
     }
+
+    function udRequestForm() {
+        tree.set('userType', true);
+        $mdDialog.show({
+            template: newRequestTemplate,
+            controller: 'newRequestController',
+            controllerAs: 'newRequest'
+        });
+    }
+
 }
 
 export default Controller;

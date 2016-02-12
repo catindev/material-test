@@ -24,6 +24,30 @@
 					change="newRequest.onFormChange({key:key, value:value})">
 				</customer-form>
 
+
+
+				<div ng-if="newRequest.userType.get()">
+					<md-subheader ng-class="newRequest.styles.subtitle">
+						Ответ отправить
+					</md-subheader>
+
+					<div layout="column" ng-class="newRequest.styles.formInner">
+
+						<div flex>
+							<md-input-container class="md-block">
+								<md-radio-group ng-model="pselected" layout="row">
+									<md-radio-button class="md-primary" value="1">Только инициатору</md-radio-button>
+									<md-radio-button class="md-primary" value="2">Сразу заказчику</md-radio-button>
+								</md-radio-group>
+							</md-input-container>
+						</div>
+
+					</div>
+
+				</div>
+
+
+
 				<!-- Каталог услуг -->
 				<services-form
 					styles="newRequest.styles"

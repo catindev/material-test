@@ -30,6 +30,11 @@
                 <span flex></span>
                 <md-button
                     class="md-raised md-primary"
+                    ng-click="requests.udRequestForm()">
+                    Создать обращение ЮД
+                </md-button>
+                <md-button
+                    class="md-raised md-primary"
                     ng-click="requests.newRequestForm()">
                     Создать обращение
                 </md-button>
@@ -40,7 +45,7 @@
             flex class="md-padding"
             ng-class="requests.styles.bg">
 
-            <div 
+            <div
                 ng-if="!requests.data.length"
                 ng-class="requests.styles.noRequests">
                     Не найдено ни одного обращения
