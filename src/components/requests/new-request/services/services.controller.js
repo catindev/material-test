@@ -1,4 +1,5 @@
 import { inject } from 'state';
+import selects from './selects.config';
 
 import {
 	getProcessGroups,
@@ -7,6 +8,7 @@ import {
 
 function Controller() {
     inject('newRequestServices', this);
+	this.selects = selects;
 
     this.onServiceChange = data => {
         console.log('onServiceChange', data);

@@ -6,57 +6,14 @@
 	<div layout="column" ng-class="$ctrl.styles.formInner">
 
 		<service-list
-			title="Группа процессов"
-			level="PROCESS_GROUP"
+			ng-repeat="list in $ctrl.selects track by $index"
+			title="{{ list.title }}"
+			level="{{ list.level }}"
 			change="$ctrl.onServiceChange({
 				level: level,
 				value: value
 			})"
-			items="$ctrl.newRequestServices.get().PROCESS_GROUP.list">
-		</service-list>
-
-		<service-list
-			ng-if="$ctrl.newRequestServices.get().PROCESS_GROUP.selected"
-			title="Процесс"
-			level="PROCESS"
-			change="$ctrl.onServiceChange({
-				level: level,
-				value: value
-			})"
-			items="$ctrl.newRequestServices.get().PROCESS.list">
-		</service-list>
-
-		<service-list
-			ng-if="$ctrl.newRequestServices.get().PROCESS.selected"
-			title="Процесс"
-			level="SUBPROCESS"
-			change="$ctrl.onServiceChange({
-				level: level,
-				value: value
-			})"
-			items="$ctrl.newRequestServices.get().SUBPROCESS.list">
-		</service-list>
-
-		<service-list
-			ng-if="$ctrl.newRequestServices.get().SUBPROCESS.selected"
-			title="Задача"
-			level="TASK"
-			change="$ctrl.onServiceChange({
-				level: level,
-				value: value
-			})"
-			items="$ctrl.newRequestServices.get().TASK.list">
-		</service-list>
-
-		<service-list
-			ng-if="$ctrl.newRequestServices.get().TASK.selected"
-			title="Задача"
-			level="TASK_ELEMENT"
-			change="$ctrl.onServiceChange({
-				level: level,
-				value: value
-			})"
-			items="$ctrl.newRequestServices.get().TASK_ELEMENT.list">
+			items="$ctrl.newRequestServices.get()[list.level].list">
 		</service-list>
 
 		<md-input-container class="md-block">
