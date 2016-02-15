@@ -1,17 +1,19 @@
 import { tree } from 'state';
 import request from 'superagent';
 
-const getRequests = ( ) => {
+const getRequests = ( cb ) => {
 	request
 		.get('api/request/')
 		.end(function(err, response){
-			tree.set(
-				'requests',
-				JSON.parse(response.text)
-			);
+			cb(err, response)
 		});
+}
+
+const setUser = ( data ) => {
+	tree.set('userData', data);
 }
 
 export {
 	getRequests,
+	setUser,
 }

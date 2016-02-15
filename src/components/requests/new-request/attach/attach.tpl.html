@@ -1,0 +1,52 @@
+<div>
+	<md-subheader ng-class="$ctrl.styles.subtitle">
+		Прикрепить файл
+	</md-subheader>
+
+  <div layout="column" ng-class="$ctrl.styles.formInner">
+	  <form name="myForm">
+
+      <md-input-container class="md-block">
+  			<label>Комментарий</label>
+  			<input type="text" name="userName" ng-model="$ctrl.comment" size="31" required>
+  		</md-input-container>
+
+      <md-input-container class="md-block">
+  			<label>Файл</label>
+        <input label="Upload Images" ngf-select ng-model="$ctrl.picFile"
+            name="file" accept="*/*" ngf-max-size="50MB" required
+            ngf-model-invalid="errorFiles">
+        <i ng-show="myForm.file.$error.maxSize">
+          Недопустимый размер файла
+          {{ errorFiles[0].size / 1000000|number:1 }}MB:
+          максимальный размер 50MB
+        </i>
+  		</md-input-container>
+
+      <md-input-container class="md-block" layout="row">
+        <md-button
+          class="md-raised"
+          ng-click="$ctrl.picFile = null"
+          ng-show="$ctrl.picFile">
+            Удалить
+        </md-button>
+
+        <md-button
+          class="md-raised md-primary"
+          ng-click="$ctrl.uploadFile($ctrl.picFile)">
+            Загрузить
+        </md-button>
+      </md-input-container>
+
+      <md-input-container class="md-block">
+        <span class="progress" ng-show="$ctrl.picFile.progress >= 0 && $ctrl.picFile.progress < 100">
+          <div style="width:{{$ctrl.picFile.progress}}%" ng-bind="$ctrl.picFile.progress + '%'"></div>
+        </span>
+        <div ng-show="$ctrl.picFile.result">{{ $ctrl.picFile.name }}</div>
+        <div ng-show="$ctrl.picFile.result">{{ $ctrl.comment }}</div>
+        <div ng-show="$ctrl.picFile.result">{{ $ctrl.fDate() }}</div>
+        <span class="err" ng-show="$ctrl.errorMsg">{{$ctrl.errorMsg}}</span>
+      </md-input-container>
+    </form>
+  </div>
+</div>

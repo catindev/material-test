@@ -11,7 +11,7 @@ const drop = () => {
 }
 
 const setDefaults = () => {
-	form.set( ['data', 'requester'], "Иванов" ); // fake!
+	form.set( ['data', 'requester'], tree.select('userData').get().login );
 	form.set( ['data', 'priority'], "ORDINARY" );
 	form.set( ['data', 'confidential'], "false" );
 	if ( form.get().latest === 'success') form.set( 'latest', null);
@@ -33,7 +33,7 @@ const submitForm = ( error ) => {
 
 const saveRequest = ( cb ) => {
 	request
-		.post( '/api/request/' )
+		.post( 'api/request/' )
 		.send( form.get().data )
 		.end( (err, response) => {
 			submitForm( err );
@@ -45,7 +45,7 @@ const sendRequest = () => {
 	saveRequest( ( err, response ) => {
 		submitForm( err );
 		request
-			.post( `/api/request/${response.body}/process` )
+			.post( `api/request/${response.body}/process` )
 			.end( (err, response) => {
 				console.log('Starting process ', response.body, 'with', response);
 			});

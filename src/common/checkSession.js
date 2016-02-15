@@ -1,8 +1,8 @@
-const checkSession = ($q) => {
+const checkSession = ($http) => {
 	//	if (!authService.check() ) $location.path('/');
-	return $q.when('session-resolved');
+	return $http.get('api/user/_current');
 };
 
-checkSession.$inject = [ '$q' ];
+checkSession.$inject = [ '$http' ];
 
 export default checkSession;

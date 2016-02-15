@@ -47,6 +47,7 @@
     "baobab": "^2.2.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "livr": "0.0.14",
+    "ng-file-upload": "^11.2.3",
     "superagent": "^1.7.2"
   }
 }

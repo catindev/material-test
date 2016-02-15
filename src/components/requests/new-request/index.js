@@ -21,6 +21,12 @@ function Controller( $mdDialog ) {
 		bdevelopment: 'Блок развития'
 	}
 
+	this.test2 = {
+		customer: 'Пятилова',
+		bdirection: 'Бизнес-направление',
+		bdevelopment: 'Блок развития'
+	}
+
 	this.onFormChange = changeForm;
 	this.saveRequest = saveRequest;
 	this.sendRequest = sendRequest;

@@ -1,38 +1,38 @@
-import { inject, tree } from 'state';
-
 import styles from './requests.less';
 
 import newRequestTemplate from './new-request/new.tpl.html';
 import config from './common/dataConfig';
 
-function Controller( $mdDialog ) {
+//import { getRequests, setUser } from './requests.actions';
 
-    this.styles = styles;
-    this.dataOptions = config;
+function Controller( $mdDialog, requestsModel, $http, $scope ) {
 
-    this.newRequestForm = newRequestForm;
-    this.udRequestForm = udRequestForm;
+    let newRequestWindow = {
+        template: newRequestTemplate,
+        controller: 'newRequestController',
+        controllerAs: 'newRequest'
+    };
+
+    angular.extend(this, {
+        styles,
+        dataOptions,
+        newRequestForm,
+        udRequestForm
+    });
+
+
+    requestsModel.loadUserSession();
 
     ///
 
-
-
     function newRequestForm() {
-        tree.set('userType', false);
-        $mdDialog.show({
-            template: newRequestTemplate,
-            controller: 'newRequestController',
-            controllerAs: 'newRequest'
-        });
+        requestsModel.toggleUserType(false);
+        $mdDialog.show(newRequestWindow);
     }
 
     function udRequestForm() {
-        tree.set('userType', true);
-        $mdDialog.show({
-            template: newRequestTemplate,
-            controller: 'newRequestController',
-            controllerAs: 'newRequest'
-        });
+        requestsModel.toggleUserType(true);
+        $mdDialog.show(newRequestWindow);
     }
 
 }

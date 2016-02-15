@@ -4,6 +4,7 @@ import servicesForm from './services/';
 import priorityForm from './priority/';
 import descriptionForm from './description/';
 import actionsForm from './actions-form/';
+import attach from './attach/';
 
 export {
 	initiatorForm,
@@ -11,5 +12,6 @@ export {
 	servicesForm,
 	priorityForm,
 	descriptionForm,
-	actionsForm
+	actionsForm,
+	attach,
 };

@@ -25,7 +25,7 @@ module.exports = {
 			'angular-sanitize',
 			'angular-material',
 			'angular-data-table/release/dataTable.helpers.js',
-			'angular-file-upload',
+			'ng-file-upload',
 			'superagent',
 		],
   },
