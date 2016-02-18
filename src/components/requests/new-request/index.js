@@ -9,14 +9,19 @@ import {
 } from './newRequest.actions';
 
 function Controller( $mdDialog ) {
+
 	inject('newRequestForm', this);
 	inject('userType', this);
+	inject('userInfo', this);
+
+	console.log( 'userInfo', this.userType.get() );
 
 	this.styles = styles;
 	this.dialog = $mdDialog;
 
-	this.test1 = {
+	this.test = {
 		initiator: 'Пятилова',
+		customer: 'Пятилова',
 		bdirection: 'Бизнес-направление',
 		bdevelopment: 'Блок развития'
 	}
@@ -25,7 +30,7 @@ function Controller( $mdDialog ) {
 	this.saveRequest = saveRequest;
 	this.sendRequest = sendRequest;
 
-	setDefaults();
+	setDefaults(this.userInfo.get());
 }
 
 export default Controller;

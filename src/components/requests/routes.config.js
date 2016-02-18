@@ -1,7 +1,7 @@
 import checkSession from 'common/checkSession';
 
 const getRequests = ($http, $q) => {
-	return $http.get('/api/request/').catch( err=>$q.when([]) );
+	return $http.get('api/request/').catch( err=>$q.when([]) );
 };
 getRequests.$inject = ['$http', '$q'];
 

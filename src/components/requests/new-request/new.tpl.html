@@ -14,13 +14,15 @@
 				<!-- Инициатор обращения -->
 				<initiator-form
 					styles="newRequest.styles"
-					data="newRequest.test1"
+					data="newRequest.test"
 					change="newRequest.onFormChange({key:key, value:value})">
 				</initiator-form>
 
 				<!-- Заказчик обращения -->
 				<customer-form
 					styles="newRequest.styles"
+					data="newRequest.test"
+					isUD="newRequest.userType.get()"
 					change="newRequest.onFormChange({key:key, value:value})">
 				</customer-form>
 

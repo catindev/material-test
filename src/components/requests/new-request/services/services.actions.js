@@ -22,7 +22,7 @@ const changeLevel = {
 
 const getProcessGroups = ( data ) => {
 	request
-		.get('/api/ref/service?level=PROCESS_GROUP')
+		.get('api/ref/service?level=PROCESS_GROUP')
 		.end(function(err, response){
 			services.set(
 				['PROCESS_GROUP', 'list'],
@@ -38,7 +38,7 @@ const changeServices = ( data ) => {
 		return;
 	}
 	request
-		.get(`/api/ref/service?level=${childs[data.level]}&parentId=${data.value}`)
+		.get(`api/ref/service?level=${childs[data.level]}&parentId=${data.value}`)
 		.end(function(err, response){
 			if (data.level in changeLevel)
 					changeLevel[ data.level ]( JSON.parse(response.text) );

@@ -2,23 +2,40 @@
 	<md-subheader ng-class="$ctrl.styles.subtitle">
 		Заказчик обращения
 	</md-subheader>
-
 	<div layout="column" ng-class="$ctrl.styles.formInner">
-
-		<md-input-container class="md-block">
+		<md-input-container ng-if="!$ctrl.isud" class="md-block">
 			<label>Заказчик</label>
-			<input ng-model="$ctrl.data.customer">
+			<input ng-model="$ctrl.data.customer" ng-disabled="true">
+		</md-input-container>
+
+		<md-input-container ng-if="$ctrl.isud" class="md-block">
+			<md-input-container class="md-block">
+					<label>Заказчик</label>
+					<md-select
+						ng-model="$ctrl.requester"
+						ng-change="$ctrl.change({
+							key: 'requester',
+							value: $ctrl.requester
+						})">
+							<md-option value="gordienkoas">
+								Гордиенко Александр Сергеевич
+							</md-option>
+							<md-option value="kosykhav1">
+								Косых Артем Викторович
+							</md-option>
+					</md-select>
+			</md-input-container>
 		</md-input-container>
 
 		<div flex layout-gt-sm="row">
 			<md-input-container flex-gt-sm>
 				<label>Бизнес-направление</label>
-				<input ng-model="$ctrl.data.one">
+				<input ng-model="$ctrl.data.bdirection" ng-disabled="true">
 			</md-input-container>
 
 			<md-input-container flex-gt-sm>
 				<label>Блок развития</label>
-				<input ng-model="$ctrl.data.two">
+				<input ng-model="$ctrl.data.bdevelopment" ng-disabled="true">
 			</md-input-container>
 		</div>
 

@@ -2,7 +2,9 @@ import template from './customer.tpl.html';
 
 const bindings = {
     data: '<',
-    styles: '<'
+    styles: '<',
+    isud: '<',
+    change: '&'
 };
 
 export default {

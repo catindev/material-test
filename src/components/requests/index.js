@@ -16,6 +16,8 @@ import {
 import serviceList from 'components/requests/new-request/services/select';
 
 import localdate from 'components/requests/localdate';
+import priority from 'components/requests/common/priority-filter';
+import confidential from 'components/requests/common/confidential-filter';
 import requestsList from 'components/requests/requests-list';
 import newRequestController from 'components/requests/new-request';
 
@@ -47,7 +49,13 @@ export default angular
 	.component( 'searchFilter', searchFilter )
 	.component( 'requestsList', requestsList )
 	.component( 'requests', requests )
+
+	.filter( 'priority', priority )
+	.filter( 'confidential', confidential )
+
+
 	.filter( 'localdate', localdate )
+
 	.controller( 'newRequestController', newRequestController )
 
 	.name;

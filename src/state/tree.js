@@ -7,7 +7,6 @@ const config = {
 
 const initialState = {
 	userType: false,
-	requests: [],
 	newRequestServices: {
 		PROCESS_GROUP: { list: [], selected: null },
 		PROCESS: { list: [], selected: null },

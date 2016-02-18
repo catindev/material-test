@@ -15,7 +15,7 @@ module.exports = {
 	cache: true,
 
 	entry: {
-    app: null,
+    app: [ APP + '/index.js'] ,
     vendors: [
 			'angular/angular.js',
 			'baobab',
@@ -42,11 +42,6 @@ module.exports = {
 
 	resolve: {
     root: path.resolve(APP)
-	},
-
-  watch: NODE_ENV === 'development',
-	watchOptions: {
-		aggregateTimeout: 100
 	},
 
 	module: {
@@ -103,16 +98,5 @@ module.exports = {
 		new ExtractTextPlugin('common.[hash].css', { allChunks: true })
 	],
 
-	devtool: NODE_ENV === 'development' ? 'cheap-inline-module-source-map' : null
+	devtool: 'cheap-inline-module-source-map'
 };
-
-if (NODE_ENV !== 'development') {
-  module.exports.entry.app = [ APP + '/index.js'] ;
-} else {
-  module.exports.entry.app = [
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://localhost:8081',
-    APP + '/index.js'
-  ];
-
-}

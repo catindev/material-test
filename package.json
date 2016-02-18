@@ -7,7 +7,7 @@
     "test": "webpack",
     "clean": "rm -rf public",
     "dev": "webpack-dev-server --config webpack.config.dev.js --content-base src/ --hot --history-api-fallback --inline --progress --port 8081",
-    "build": "npm run clean && set NODE_ENV=production && webpack"
+    "build": "npm run clean && webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",

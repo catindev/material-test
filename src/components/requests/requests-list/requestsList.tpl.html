@@ -1,15 +1,26 @@
-<dtable
-	class="material"
-	options="$ctrl.options"
-	rows="$ctrl.data">
-
-			<column name="Номер" width="60">{{ $row.id }}</column>
-			<column name="Дата">{{ $row.applyDate | localdate }}</column>
-			<column name="Заголовок" width="200">{{ $row.header }}</column>
-			<column name="Задача" width="200">{{ $row.task }}</column>
-			<!-- <column name="Элемент задачи" width="200">{{$row.taskElement}}</column> -->
-			<column name="Высокий">{{ $row.priority }}</column>
-			<column name="Конф.">{{ $row.confidential }}</column>
-			<column name="Статус">{{ $row.status }}</column>
-			
-</dtable>
+<table class="pure-table">
+    <thead>
+        <tr>
+            <th>Номер</th>
+            <th>Дата</th>
+			<th>Заголовок</th>
+            <th>Задача</th>
+			<th>Элемент задачи</th>
+			<th>Приоритет</th>
+			<th>Конф.</th>
+			<th>Статус</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="request in $ctrl.data track by $index">
+            <td>{{ request.id }}</td>
+            <th width="100px">{{ request.applyDate | localdate }}</th>
+			<th>{{ request.header }}</th>
+            <th>{{ request.task }}</th>
+			<th>{{ request.taskElement }}</th>
+			<th>{{ request.priority | priority }}</th>
+			<th>{{ request.confidential | confidential }}</th>
+			<th>{{ request.status }}</th>
+        </tr>
+    </tbody>
+</table>
